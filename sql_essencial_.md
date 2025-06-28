@@ -100,6 +100,22 @@ CREATE TABLE funcionarios (
 );
 ```
 
+## ❌ Manipulação de Constraints
+
+```sql
+-- Remove a constraint de chave estrangeira antiga
+ALTER TABLE Music DROP CONSTRAINT music_artist_fkey;
+
+-- Corrige o nome da coluna (renomeia de 'artist' para 'artist_id')
+ALTER TABLE Music RENAME COLUMN artist TO artist_id;
+
+-- Adiciona novamente a constraint de chave estrangeira com o nome correto da coluna
+ALTER TABLE Music
+ADD CONSTRAINT fk_artist_music FOREIGN KEY (artist_id) REFERENCES Artist(id);
+```
+
+---
+
 ### 🎯 Manipulação de Constraints
 
 | Ação                      | Script                                                                                           |
