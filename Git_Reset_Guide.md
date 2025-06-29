@@ -63,3 +63,12 @@ O histórico agora deve estar limpo, com os commits que você deseja manter e se
 3. Use `git reset --hard` para voltar ao commit desejado.
 4. Use `git push --force` para atualizar o GitHub.
 5. Verifique as mudanças com `git log --oneline`.
+
+## EXTRA
+## Corrigir mensagem do commit 
+Fez o commit, mas errou na hora de escrever, e ainda não fez o git push
+```bash
+git commit --amend -m "frase do commit"
+git push 
+
+```
