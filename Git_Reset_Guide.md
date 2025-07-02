@@ -72,3 +72,42 @@ git commit --amend -m "frase do commit"
 git push 
 
 ```
+# Git: Uso Básico do Stash e Resolução de Conflitos de Push
+
+## 1. Guardar mudanças temporariamente (stash)
+
+git stash
+
+- O que faz: guarda suas alterações atuais (não commitadas) em uma “prateleira temporária” e limpa seu diretório de trabalho, permitindo que você trabalhe com uma versão limpa do código.
+- Quando usar: quando você tem mudanças em andamento, mas precisa atualizar seu branch (git pull) e ainda não quer ou não pode fazer commit.
+
+## 2. Atualizar seu branch local com as mudanças do remoto
+
+git pull origin main --rebase
+
+- O que faz: baixa as mudanças do repositório remoto (origin/main) e reaplica seus commits locais por cima (rebase), mantendo um histórico linear.
+- Quando usar: para sincronizar seu branch local com o remoto antes de enviar seus commits (push), evitando conflitos.
+
+## 3. Recuperar as mudanças guardadas no stash
+
+git stash pop
+
+- O que faz: aplica as mudanças guardadas no stash de volta ao seu diretório de trabalho e remove essa stash da lista.
+- Quando usar: depois de atualizar seu branch (pull), para continuar trabalhando nas suas mudanças anteriores.
+
+## 4. Configurar quebra de linha automática no Windows
+
+git config --global core.autocrlf true
+
+- O que faz: configura o Git para converter automaticamente as quebras de linha entre LF (Linux/macOS) e CRLF (Windows) conforme o sistema operacional, evitando avisos sobre quebras de linha.
+- Quando usar: para evitar mensagens de aviso ao trabalhar com Git no Windows.
+
+## Fluxo típico para resolver erros de push devido a mudanças remotas:
+
+1. Salvar suas mudanças atuais com git stash (se ainda não fez commit).
+2. Atualizar seu branch local com git pull origin main --rebase.
+3. Aplicar suas mudanças de volta com git stash pop.
+4. Resolver conflitos, se aparecerem.
+5. Fazer commit, se necessário.
+6. Fazer o push com git push origin main.
+
