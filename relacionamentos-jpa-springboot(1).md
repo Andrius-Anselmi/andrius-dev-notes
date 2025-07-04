@@ -127,15 +127,6 @@ private List<Aluno> alunos;
 
 ---
 
-## 🔹 10. Não precisa decorar tudo
-- Consultar a sintaxe é normal.
-- O importante é entender o que está fazendo.
-- Use documentação e exemplos como ferramenta.
-
----
-
----
-
 ## 🔹 Relação entre @JoinColumn e FOREIGN KEY no banco
 
 ### 📘 No JPA (Entidade Aluno)
@@ -188,3 +179,12 @@ CREATE TABLE aluno (
 - `@JoinColumn` no JPA representa a foreign key no banco.
 - A FK real é a regra de integridade no banco (`FOREIGN KEY ... REFERENCES ...`).
 - O nome da constraint (`fk_aluno_turma`) é opcional, mas útil quando você usa scripts manuais (como com Flyway).
+
+---
+  ## 🔹 10. Não precisa decorar tudo
+- Consultar a sintaxe é normal.
+- O importante é entender o que está fazendo.
+- Use documentação e exemplos como ferramenta.
+
+---
+
